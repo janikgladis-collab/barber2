@@ -1,63 +1,46 @@
-// =======================================
-// 🔹 MENU A HAMBURGER
-// =======================================
+
+// ================================
+// Menu: hamburger toggle
+// ================================
 const hamburger = document.getElementById("hamburger");
-const nav = document.querySelector("nav");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("open");
-  nav.classList.toggle("active");
-});
-
-// Zavrie menu po kliknutí na odkaz
-document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", () => {
+const nav = document.getElementById("nav");
+if (hamburger && nav){
+  hamburger.addEventListener("click", () => {
+    const open = hamburger.classList.toggle("open");
+    nav.classList.toggle("active");
+    hamburger.setAttribute("aria-expanded", String(open));
+  });
+  // Close on nav link click (mobile)
+  nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
     hamburger.classList.remove("open");
     nav.classList.remove("active");
-  });
-});
+    hamburger.setAttribute("aria-expanded", "false");
+  }));
+}
 
-// =======================================
-// 🔹 RECENZIE – automatický slider
-// =======================================
+// ================================
+// Reviews: auto slide every 5s
+// ================================
 const track = document.querySelector(".reviews-track");
 const reviews = document.querySelectorAll(".review");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-
-let index = 0;
-const total = reviews.length;
-
-function showReview(i) {
-  track.style.transform = `translateX(-${i * 100}%)`;
+let idx = 0;
+function updateReviews(){
+  if(!track || !reviews.length) return;
+  track.style.transform = `translateX(-${idx * 100}%)`;
 }
+function next(){ idx = (idx + 1) % reviews.length; updateReviews(); }
+function prev(){ idx = (idx - 1 + reviews.length) % reviews.length; updateReviews(); }
 
-if (nextBtn && prevBtn) {
-  nextBtn.addEventListener("click", () => {
-    index = (index + 1) % total;
-    showReview(index);
-  });
+document.getElementById("nextReview")?.addEventListener("click", next);
+document.getElementById("prevReview")?.addEventListener("click", prev);
+setInterval(next, 5000);
 
-  prevBtn.addEventListener("click", () => {
-    index = (index - 1 + total) % total;
-    showReview(index);
-  });
-}
-
-setInterval(() => {
-  index = (index + 1) % total;
-  showReview(index);
-}, 6000);
-
-// =======================================
-// 🔹 PLYNULÉ SCROLL
-// =======================================
+// ================================
+// Smooth scroll (nice UX)
+ // ================================
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", e => {
     const target = document.querySelector(link.getAttribute("href"));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
-    }
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: "smooth" }); }
   });
 });
