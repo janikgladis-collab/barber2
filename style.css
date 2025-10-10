@@ -131,41 +131,83 @@ body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 h1,h2,h3{font-family:'Playfair Display', Georgia, 'Times New Roman', serif}
 
 /* =======================================
-   🔹 CENNÍK
+   🔹 CENNÍK – glassmorphism
 ======================================= */
-.price-list {
-  max-width: 500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.price-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  max-width:980px;
+  margin:0 auto;
+}
+@media (max-width:900px){ .price-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:620px){ .price-grid{grid-template-columns:1fr} }
+
+.price-card{
+  position:relative;
+  padding:22px 20px;
+  border-radius:16px;
+  /* sklenený efekt */
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 8px 30px rgba(0,0,0,.35);
+  backdrop-filter:saturate(130%) blur(14px);
+  -webkit-backdrop-filter:saturate(130%) blur(14px);
+
+  /* jemný zlatý okraj – iba náznak */
+  outline:1px solid rgba(212,175,55,.22);
+  outline-offset:-2px;
+
+  transition: transform .25s ease, box-shadow .25s ease, outline-color .25s ease;
+}
+.price-card::before{
+  /* „svetelný“ prechod v hornom rohu */
+  content:"";
+  position:absolute; inset:0;
+  border-radius:16px;
+  background: radial-gradient(1200px 400px at -10% -20%, rgba(212,175,55,.14), transparent 40%),
+              radial-gradient(800px 260px at 120% -30%, rgba(255,255,255,.06), transparent 40%);
+  pointer-events:none;
+  mix-blend-mode:screen;
 }
 
-.price-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--card);
-  border: 1px solid #222;
-  border-radius: 10px;
-  padding: 14px 18px;
-  font-size: 1.1rem;
-  color: #eaeaea;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
+.price-card:hover{
+  transform: translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,.45);
+  outline-color: rgba(212,175,55,.38);
 }
 
-.price-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+/* typografia cenníka */
+.price-card h3{
+  margin:0 0 8px;
+  color:var(--gold);
+  font-family:'Playfair Display', Georgia, serif;
+  letter-spacing:.2px;
+  font-size: clamp(18px,2.8vw,22px);
+}
+.price-card p{
+  margin:0 0 14px;
+  color:var(--muted);
+  line-height:1.45;
+  font-size: 0.98rem;
 }
 
-.price-item span:first-child {
-  font-weight: 600;
-  color: var(--gold);
+/* cena – výrazná, ale čistá */
+.price{
+  display:inline-block;
+  font-weight:800;
+  font-size: clamp(22px,6vw,32px);
+  color:#fff;
+  padding:8px 14px;
+  border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(6px);
 }
 
-.price-item span:last-child {
-  font-weight: 500;
-}
+/* voliteľný jemný „shine“ po načítaní */
+@keyframes pricePop { from { transform:scale(.98); opacity:.0 } to { transform:scale(1); opacity:1 } }
+.price-card{ animation:pricePop .4s ease both; }
+.price-card:nth-child(2){ animation-delay:.06s }
+.price-card:nth-child(3){ animation-delay:.12s }
 
