@@ -21,8 +21,30 @@ a{color:var(--text);text-decoration:none}
 /* Header */
 .site-header{position:sticky;top:0;z-index:50;background:rgba(14,14,15,.9);backdrop-filter:blur(6px);border-bottom:1px solid #222}
 .header-inner{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 0}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700}
-.logo img{width:26px;height:26px;border-radius:6px}
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  color: var(--gold);
+  font-size: 1.3rem; /* o niečo väčší text */
+  letter-spacing: 0.5px;
+}
+
+.logo img {
+  width: 38px; /* väčšie, ale nie prehnane */
+  height: 38px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(212,175,55,0.25); /* jemný zlatý lesk */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(212,175,55,0.4);
+}
 
 .nav{display:flex;gap:18px}
 .nav a{opacity:.9;padding:6px 8px;border-radius:8px}
