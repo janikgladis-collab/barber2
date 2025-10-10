@@ -130,3 +130,42 @@ a{color:var(--text);text-decoration:none}
 body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 h1,h2,h3{font-family:'Playfair Display', Georgia, 'Times New Roman', serif}
 
+/* =======================================
+   🔹 CENNÍK
+======================================= */
+.price-list {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  color: #eaeaea;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.price-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+.price-item span:first-child {
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.price-item span:last-child {
+  font-weight: 500;
+}
+
