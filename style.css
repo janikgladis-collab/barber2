@@ -156,6 +156,11 @@ a{color:var(--text);text-decoration:none}
   .nav.active{transform:translateY(0);opacity:1;pointer-events:auto}
   .hamburger{display:flex}
   .services,.gallery{grid-template-columns:1fr}
+  /* Mobil: nech logo neleží na ľavom okraji (iPhone notch friendly) */
+  .site-header .container {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
 }
 
 .price, .price-card h3, .hero h1 {
