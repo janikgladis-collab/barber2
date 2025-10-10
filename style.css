@@ -1,10 +1,19 @@
 
 :root{
   --bg:#000; --bg-2:#0a0a0a; --text:#e8e8e8; --muted:#a8a8a8; --gold:#d4af37; --card:#121212;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
 }
 
+
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#000;color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+html,body{margin:0;padding:0;background:#000;color:var(--text);font-family: var(--font-sans);scroll-behavior:smooth}
+h1, h2, h3, .logo span {
+  font-family: var(--font-serif);
+}
+h2 {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
 img{max-width:100%;display:block}
 a{color:var(--text);text-decoration:none}
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
@@ -41,10 +50,12 @@ a{color:var(--text);text-decoration:none}
 }
 
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 6vw, 54px);
   color: var(--gold);
+  background: linear-gradient(90deg, #d4af37, #eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 12px;
+  font-size: clamp(32px, 6vw, 54px);
 }
 
 .hero p {
@@ -125,10 +136,9 @@ a{color:var(--text);text-decoration:none}
   .services,.gallery{grid-template-columns:1fr}
 }
 
-
-/* Typography */
-body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-h1,h2,h3{font-family:'Playfair Display', Georgia, 'Times New Roman', serif}
+.price, .price-card h3, .hero h1 {
+  font-family: var(--font-serif);
+}
 
 /* =======================================
    🔹 CENNÍK – glassmorphism
@@ -204,7 +214,9 @@ h1,h2,h3{font-family:'Playfair Display', Georgia, 'Times New Roman', serif}
   border:1px solid rgba(255,255,255,.16);
   backdrop-filter: blur(6px);
 }
-
+.card:hover h3,.price-card:hover h3 {
+  color: #fff; /* alebo svetlejší odtieň */
+}
 /* voliteľný jemný „shine“ po načítaní */
 @keyframes pricePop { from { transform:scale(.98); opacity:.0 } to { transform:scale(1); opacity:1 } }
 .price-card{ animation:pricePop .4s ease both; }
