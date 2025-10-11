@@ -1,3 +1,6 @@
+if (window.innerWidth < 600) {
+  document.getElementById('bgvideo').remove();
+}
 // ================================
 // Menu: hamburger toggle
 // ================================
