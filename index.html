@@ -2,14 +2,12 @@
 <html lang="sk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Pánsky Barber Klub Trebišov</title>
   <link rel="icon" type="image/png" href="images/favicon.PNG" />
 
   <!-- Fonty -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- 💡 Nový font pre texty -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -21,25 +19,30 @@
         <img src="images/favicon.PNG" alt="Pánsky Barber Klub Trebišov" />
         <span>Pánsky Barber Klub</span>
       </a>
+
       <nav id="nav" class="nav">
         <a href="#onas">O nás</a>
         <a href="#ponukame">Ponúkame</a>
+        <a href="#cennik">Cenník</a>
         <a href="#galeria">Galéria</a>
         <a href="#recenzie">Recenzie</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
+
       <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
-   <section class="hero">
+  <!-- ================= HERO (video background) ================= -->
+  <section class="hero">
     <video autoplay muted loop playsinline poster="images/hero-poster.jpg" id="bgvideo">
-      <source src="images/hero.mp4" type="video/mp4">
+      <source src="images/hero.mp4" type="video/mp4" />
     </video>
-  
+    <!-- Voliteľný overlay pre lepší kontrast textu -->
+    <div class="overlay"></div>
+
     <div class="hero-content">
       <h1>Pánsky Barber Klub</h1>
       <p>Moderné strihy a poctivá starostlivosť.</p>
@@ -48,55 +51,55 @@
   </section>
 
   <!-- ================= O NÁS ================= -->
-<section id="onas" class="section fade-in">
-  <div class="container">
-    <h2>O nás</h2>
-    <p>Sme profesionálny barber tím v Trebišove. Spájame tradičné remeslo s modernými technikami a kvalitnou kozmetikou.</p>
-  </div>
-</section>
+  <section id="onas" class="section fade-in">
+    <div class="container">
+      <h2>O nás</h2>
+      <p>Sme profesionálny barber tím v Trebišove. Spájame tradičné remeslo s modernými technikami a kvalitnou kozmetikou.</p>
+    </div>
+  </section>
 
   <!-- ================= PONÚKAME ================= -->
-<section id="ponukame" class="section">
-  <div class="container">
-    <h2 class="fade-in fade-delay-1">Čo ponúkame</h2>
-    <div class="grid services">
-      <div class="card fade-in fade-delay-2">
-        <img src="images/strih.JPG" alt="Klasický strih" />
-        <h3>Klasický strih</h3>
-        <p>Moderný alebo tradičný pánsky strih podľa vašich predstáv.</p>
-      </div>
-      <div class="card fade-in fade-delay-3">
-        <img src="images/brada.JPG" alt="Úprava brady" />
-        <h3>Úprava brady</h3>
-        <p>Modelovanie, strih a ošetrenie brady s horúcim uterákom.</p>
-      </div>
-      <div class="card fade-in fade-delay-4">
-        <img src="images/komplet.JPG" alt="Komplet" />
-        <h3>Komplet</h3>
-        <p>Kompletná úprava vlasov a brady – top starostlivosť v balíku.</p>
+  <section id="ponukame" class="section">
+    <div class="container">
+      <h2 class="fade-in fade-delay-1">Čo ponúkame</h2>
+      <div class="grid services">
+        <div class="card fade-in fade-delay-2">
+          <img src="images/strih.JPG" alt="Klasický strih" />
+          <h3>Klasický strih</h3>
+          <p>Moderný alebo tradičný pánsky strih podľa vašich predstáv.</p>
+        </div>
+        <div class="card fade-in fade-delay-3">
+          <img src="images/brada.JPG" alt="Úprava brady" />
+          <h3>Úprava brady</h3>
+          <p>Modelovanie, strih a ošetrenie brady s horúcim uterákom.</p>
+        </div>
+        <div class="card fade-in fade-delay-4">
+          <img src="images/komplet.JPG" alt="Komplet" />
+          <h3>Komplet</h3>
+          <p>Kompletná úprava vlasov a brady – top starostlivosť v balíku.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
- <!-- ================= CENNÍK ================= -->
+  <!-- ================= CENNÍK ================= -->
   <section id="cennik" class="section">
     <div class="container">
       <h2>Cenník</h2>
-  
+
       <div class="price-grid">
         <article class="price-card">
           <h3>Pánsky strih</h3>
           <p>Moderný alebo tradičný strih podľa predstáv.</p>
           <div class="price">20 €</div>
         </article>
-  
+
         <article class="price-card">
           <h3>Úprava brady</h3>
           <p>Tvarovanie, holenie a ošetrenie brady.</p>
           <div class="price">20 €</div>
         </article>
-  
+
         <article class="price-card">
           <h3>Komplet</h3>
           <p>Vlasy + brada – kompletná úprava.</p>
@@ -119,31 +122,32 @@
   </section>
 
   <!-- ================= RECENZIE ================= -->
-<section id="recenzie" class="section fade-in">
-  <div class="container">
-    <h2>Recenzie</h2>
-    <div class="reviews">
-      <button class="arrow left" aria-label="Predošlá recenzia" id="prevReview">‹</button>
-      <div class="reviews-viewport">
-        <div class="reviews-track">
-          <article class="review">
-            <p>„Skvelý prístup a presný strih. Určite prídem znova.“</p>
-            <div class="author">Marek K.</div>
-          </article>
-          <article class="review">
-            <p>„Výborná atmosféra, brada vyzerá perfektne. Odporúčam!“</p>
-            <div class="author">Lukáš B.</div>
-          </article>
-          <article class="review">
-            <p>„Rýchlo, kvalitne a za férovú cenu. Top barber v meste.“</p>
-            <div class="author">Adam P.</div>
-          </article>
+  <section id="recenzie" class="section fade-in">
+    <div class="container">
+      <h2>Recenzie</h2>
+      <div class="reviews">
+        <button class="arrow left" aria-label="Predošlá recenzia" id="prevReview">‹</button>
+        <div class="reviews-viewport">
+          <div class="reviews-track">
+            <article class="review">
+              <p>„Skvelý prístup a presný strih. Určite prídem znova.“</p>
+              <div class="author">Marek K.</div>
+            </article>
+            <article class="review">
+              <p>„Výborná atmosféra, brada vyzerá perfektne. Odporúčam!“</p>
+              <div class="author">Lukáš B.</div>
+            </article>
+            <article class="review">
+              <p>„Rýchlo, kvalitne a za férovú cenu. Top barber v meste.“</p>
+              <div class="author">Adam P.</div>
+            </article>
+          </div>
         </div>
+        <button class="arrow right" aria-label="Ďalšia recenzia" id="nextReview">›</button>
       </div>
-      <button class="arrow right" aria-label="Ďalšia recenzia" id="nextReview">›</button>
     </div>
-  </div>
-</section>
+  </section>
+
   <!-- ================= KONTAKT & MAPA ================= -->
   <section id="kontakt" class="section section-dark">
     <div class="container contact-grid">
@@ -151,7 +155,7 @@
         <h2>Kontakt</h2>
         <ul class="contact-list">
           <li><img src="images/phone-icon.png" alt="" /> <a href="tel:+421918458381">+421 918 458 381</a></li>
-          <li><img src="images/email-icon.png" alt="" /> <a href="mailto:barberklubtrebisov@gmail.comk">barberklubtrebisov@gmail.com</a></li>
+          <li><img src="images/email-icon.png" alt="" /> <a href="mailto:barberklubtrebisov@gmail.com">barberklubtrebisov@gmail.com</a></li>
           <li><img src="images/location-icon.png" alt="" /> M. R. Štefánika 190/39, Trebišov</li>
         </ul>
         <div class="socials">
@@ -161,7 +165,6 @@
       </div>
       <div class="map-block">
         <h2>Kde nás nájdete</h2>
-        <!-- TIP: Vymeníte iba URL nižšie za presnú adresu na Google Maps (Embed) -->
         <div class="map-wrap">
           <iframe
             title="Mapa – Pánsky Barber Klub Trebišov"
@@ -181,23 +184,25 @@
     </div>
   </footer>
 
-  <script>document.querySelector('.site-footer p').innerHTML = `© ${new Date().getFullYear()} Pánsky Barber Klub Trebišov`;</script>
+  <script>
+    // aktuálny rok vo footeri
+    document.querySelector('.site-footer p').innerHTML = `© ${new Date().getFullYear()} Pánsky Barber Klub Trebišov`;
+
+    // fade-in pri scrollnutí (animuje sa len raz)
+    document.addEventListener("DOMContentLoaded", () => {
+      const fadeEls = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      fadeEls.forEach(el => observer.observe(el));
+    });
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const fadeEls = document.querySelectorAll(".fade-in");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // animuje sa len raz
-      }
-    });
-  }, { threshold: 0.2 });
-
-  fadeEls.forEach(el => observer.observe(el));
-});
-</script>
